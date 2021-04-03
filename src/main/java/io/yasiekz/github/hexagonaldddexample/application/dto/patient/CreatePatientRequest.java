@@ -1,11 +1,17 @@
 package io.yasiekz.github.hexagonaldddexample.application.dto.patient;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import lombok.Value;
 
 @Value
 public class CreatePatientRequest {
 
+    @NotEmpty
+    @Size(max = 70)
     String name;
-    String pesel;
+    @NotEmpty
+    @Size(max = 70)
+    String idNumber;
 
 }

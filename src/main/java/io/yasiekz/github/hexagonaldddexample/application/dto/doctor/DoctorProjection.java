@@ -10,6 +10,8 @@ public class DoctorProjection {
 
     UUID id;
     String name;
+    String phoneNumber;
+    String email;
     DoctorSpecialization specialization;
 
 }
