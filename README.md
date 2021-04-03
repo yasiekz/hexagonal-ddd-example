@@ -39,9 +39,11 @@ TBD
 
 ### Visit requirements
 
-- `doctor`, and `patient` entities must be present
+- `Doctor`, and `Patient` entities must be present
 - Both entities have to had free visit slot at the same day
 - Visit with date > 14 days ahead cannot be created
+- `Doctor` is notified via email 
+- `Patient` is notified via SMS
 
 ## What is inside
 

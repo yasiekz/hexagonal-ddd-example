@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-public abstract class ImMemoryDb<T> {
+public abstract class ImMemoryRepository<T> {
 
     protected final ConcurrentHashMap<UUID, T> concurrentHashMap = new ConcurrentHashMap<>();
 

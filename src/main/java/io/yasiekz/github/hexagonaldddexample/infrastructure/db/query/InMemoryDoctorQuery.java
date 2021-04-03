@@ -5,7 +5,7 @@ import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorProjec
 import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorSpecialization;
 import io.yasiekz.github.hexagonaldddexample.application.query.DoctorQuery;
 import io.yasiekz.github.hexagonaldddexample.domain.doctor.Doctor;
-import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorDb;
+import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorRepository;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class InMemoryDoctorQuery implements DoctorQuery {
 
-    private final InMemoryDoctorDb db;
+    private final InMemoryDoctorRepository db;
 
     public List<DoctorProjection> getAll() {
 

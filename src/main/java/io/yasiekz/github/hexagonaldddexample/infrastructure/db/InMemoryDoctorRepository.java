@@ -4,7 +4,7 @@ import io.yasiekz.github.hexagonaldddexample.domain.doctor.Doctor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InMemoryDoctorDb extends ImMemoryDb<Doctor> {
+public class InMemoryDoctorRepository extends ImMemoryRepository<Doctor> {
 
 
 }

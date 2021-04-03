@@ -2,8 +2,8 @@ package io.yasiekz.github.hexagonaldddexample.configuration;
 
 import io.yasiekz.github.hexagonaldddexample.domain.doctor.Doctor;
 import io.yasiekz.github.hexagonaldddexample.domain.patient.Patient;
-import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorDb;
-import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryPatientDb;
+import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorRepository;
+import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryPatientRepository;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class Bootstrap implements InitializingBean {
 
-    private final InMemoryDoctorDb doctorDb;
-    private final InMemoryPatientDb patientDb;
+    private final InMemoryDoctorRepository doctorDb;
+    private final InMemoryPatientRepository patientDb;
 
     @Override
     public void afterPropertiesSet() throws Exception {
