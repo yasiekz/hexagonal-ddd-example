@@ -1,8 +1,9 @@
 package io.yasiekz.github.hexagonaldddexample.application.controller;
 
-import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.CreateDoctorRequest;
 import io.yasiekz.github.hexagonaldddexample.application.dto.UUIDResponse;
+import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.CreateDoctorRequest;
 import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorProjection;
+import io.yasiekz.github.hexagonaldddexample.application.handler.doctor.CreateDoctorHandler;
 import io.yasiekz.github.hexagonaldddexample.application.query.DoctorQuery;
 import java.util.List;
 import java.util.UUID;
@@ -15,12 +16,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class DoctorController {
 
+    private final CreateDoctorHandler handler;
     private final DoctorQuery doctorQuery;
 
     @PostMapping
     public UUIDResponse create(@Validated @RequestBody final CreateDoctorRequest request) {
 
         final UUID id = UUID.randomUUID();
+        handler.create(id, request);
 
         return UUIDResponse.of(id);
     }

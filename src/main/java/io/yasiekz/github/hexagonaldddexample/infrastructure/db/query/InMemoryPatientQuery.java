@@ -3,7 +3,7 @@ package io.yasiekz.github.hexagonaldddexample.infrastructure.db.query;
 import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorNotFound;
 import io.yasiekz.github.hexagonaldddexample.application.dto.patient.PatientProjection;
 import io.yasiekz.github.hexagonaldddexample.application.query.PatientQuery;
-import io.yasiekz.github.hexagonaldddexample.domain.patient.Patient;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.Patient;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryPatientRepository;
 import java.util.List;
 import java.util.UUID;

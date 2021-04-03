@@ -2,9 +2,9 @@ package io.yasiekz.github.hexagonaldddexample.infrastructure.db.query;
 
 import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorNotFound;
 import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorProjection;
-import io.yasiekz.github.hexagonaldddexample.application.dto.doctor.DoctorSpecialization;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
 import io.yasiekz.github.hexagonaldddexample.application.query.DoctorQuery;
-import io.yasiekz.github.hexagonaldddexample.domain.doctor.Doctor;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.Doctor;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorRepository;
 import java.util.List;
 import java.util.UUID;

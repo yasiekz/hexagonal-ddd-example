@@ -4,6 +4,11 @@ public enum DoctorSpecialization {
 
     ONCOLOGIST,
     PROCTOLOGIST,
-    SURGEON
+    SURGEON;
 
+    public DoctorSpecialization from(
+        io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization specialization) {
+
+        return DoctorSpecialization.valueOf(specialization.name());
+    }
 }

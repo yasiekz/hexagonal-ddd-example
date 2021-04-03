@@ -1,5 +1,6 @@
 package io.yasiekz.github.hexagonaldddexample.application.dto.doctor;
 
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
 import java.util.UUID;
 import lombok.Builder;
 import lombok.Value;

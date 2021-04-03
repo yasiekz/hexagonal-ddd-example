@@ -1,7 +1,11 @@
 package io.yasiekz.github.hexagonaldddexample.configuration;
 
-import io.yasiekz.github.hexagonaldddexample.domain.doctor.Doctor;
-import io.yasiekz.github.hexagonaldddexample.domain.patient.Patient;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.Doctor;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.PractiseLicenseNumber;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.Patient;
+import io.yasiekz.github.hexagonaldddexample.domain.email.EmailAddress;
+import io.yasiekz.github.hexagonaldddexample.domain.phonenumber.PhoneNumber;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorRepository;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryPatientRepository;
 import java.util.UUID;
@@ -30,15 +34,27 @@ public class Bootstrap implements InitializingBean {
         final UUID p3Id = UUID.randomUUID();
 
         log.info("Initializing doctors");
-        doctorDb.save(d1Id, new Doctor(d1Id));
-        doctorDb.save(d2Id, new Doctor(d2Id));
-        doctorDb.save(d3Id, new Doctor(d3Id));
+        doctorDb.save(createDoctor(d1Id));
+        doctorDb.save(createDoctor(d2Id));
+        doctorDb.save(createDoctor(d3Id));
         log.info("Doctors initialized");
 
         log.info("Initializing patients");
-        patientDb.save(p1Id, new Patient(p1Id));
-        patientDb.save(p2Id, new Patient(p2Id));
-        patientDb.save(p3Id, new Patient(p3Id));
+        patientDb.save(new Patient(p1Id));
+        patientDb.save(new Patient(p2Id));
+        patientDb.save(new Patient(p3Id));
         log.info("Patients initialized");
+    }
+
+    private Doctor createDoctor(final UUID id) {
+
+        return Doctor.builder()
+            .withId(id)
+            .withSpecialization(DoctorSpecialization.SURGEON)
+            .withEmailAddress(EmailAddress.of("abc@abc.pl"))
+            .withPhoneNumber(PhoneNumber.of("+48123123123"))
+            .withPractiseLicenseNumber(PractiseLicenseNumber.of("123123123"))
+            .withName("Janusz lekarzy")
+            .build();
     }
 }

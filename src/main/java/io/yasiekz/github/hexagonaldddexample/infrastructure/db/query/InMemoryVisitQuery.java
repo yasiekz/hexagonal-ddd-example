@@ -5,7 +5,7 @@ import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitNotFound
 import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitProjection;
 import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitSpace;
 import io.yasiekz.github.hexagonaldddexample.application.query.VisitQuery;
-import io.yasiekz.github.hexagonaldddexample.domain.patient.Patient;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.Patient;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryPatientRepository;
 import java.time.LocalDate;
 import java.util.List;
