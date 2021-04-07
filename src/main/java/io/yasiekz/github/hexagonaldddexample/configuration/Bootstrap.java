@@ -3,6 +3,7 @@ package io.yasiekz.github.hexagonaldddexample.configuration;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.Doctor;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.PractiseLicenseNumber;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.InsuranceLevel;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.Patient;
 import io.yasiekz.github.hexagonaldddexample.domain.email.EmailAddress;
 import io.yasiekz.github.hexagonaldddexample.domain.phonenumber.PhoneNumber;
@@ -40,9 +41,9 @@ public class Bootstrap implements InitializingBean {
         log.info("Doctors initialized");
 
         log.info("Initializing patients");
-        patientDb.save(new Patient(p1Id));
-        patientDb.save(new Patient(p2Id));
-        patientDb.save(new Patient(p3Id));
+        patientDb.save(createPatient(p1Id));
+        patientDb.save(createPatient(p2Id));
+        patientDb.save(createPatient(p3Id));
         log.info("Patients initialized");
     }
 
@@ -55,6 +56,16 @@ public class Bootstrap implements InitializingBean {
             .withPhoneNumber(PhoneNumber.of("+48123123123"))
             .withPractiseLicenseNumber(PractiseLicenseNumber.of("123123123"))
             .withName("Janusz lekarzy")
+            .build();
+    }
+
+    private Patient createPatient(final UUID id) {
+
+        return Patient.builder()
+            .withId(id)
+            .withName("Ktoś bardzo chory")
+            .withInsuranceLevel(InsuranceLevel.MEDIUM)
+            .withPhoneNumber(PhoneNumber.of("+48123123123"))
             .build();
     }
 }
