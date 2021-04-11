@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.PractiseLicenseNumber;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil.NilResponse;
+import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil.RestDoctorSpecializationAdapter;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil.RestNilRepository;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil.Specialization;
 import java.util.stream.Stream;

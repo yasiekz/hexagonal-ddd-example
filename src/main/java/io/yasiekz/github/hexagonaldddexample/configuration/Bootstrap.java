@@ -3,7 +3,7 @@ package io.yasiekz.github.hexagonaldddexample.configuration;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.Doctor;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.PractiseLicenseNumber;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
-import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.InsuranceLevel;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevel;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.Patient;
 import io.yasiekz.github.hexagonaldddexample.domain.email.EmailAddress;
 import io.yasiekz.github.hexagonaldddexample.domain.phonenumber.PhoneNumber;

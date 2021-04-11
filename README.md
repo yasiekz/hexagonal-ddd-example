@@ -32,6 +32,7 @@ TBD
 - During creation process, the system force client to provide patient's ID number. It is needed to 
   check patient`s insurance existence and illness history
 - Afters successful creation patient is notified via SMS
+- There are much insurance level's. Patients who's are below MEDIUM level, cannot be added
 
 #### First requirements change
 

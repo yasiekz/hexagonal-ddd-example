@@ -1,10 +1,8 @@
-package io.yasiekz.github.hexagonaldddexample.infrastructure.random;
+package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil;
 
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.PractiseLicenseNumber;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecialization;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.doctor.specialization.DoctorSpecializationPort;
-import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil.RestNilRepository;
-import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.nil.Specialization;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

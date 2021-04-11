@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class DoctorFactory {
+public final class DoctorFactory {
 
     private final DoctorSpecializationPort specializationPort;
 
