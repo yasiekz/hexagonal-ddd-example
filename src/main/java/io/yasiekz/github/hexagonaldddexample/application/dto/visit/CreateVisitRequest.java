@@ -16,6 +16,6 @@ public class CreateVisitRequest {
     @FutureOrPresent
     LocalDate date;
     @NotNull
-    VisitSpace visitSpace;
+    VisitSlot visitSpace;
 
 }

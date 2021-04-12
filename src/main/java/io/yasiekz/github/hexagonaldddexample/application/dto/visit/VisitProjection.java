@@ -11,7 +11,7 @@ public class VisitProjection {
 
     UUID id;
     LocalDate date;
-    VisitSpace visitSpace;
+    VisitSlot visitSpace;
     Doctor doctor;
     Patient patient;
 

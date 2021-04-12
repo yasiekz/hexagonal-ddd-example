@@ -3,7 +3,7 @@ package io.yasiekz.github.hexagonaldddexample.infrastructure.db.query;
 import io.yasiekz.github.hexagonaldddexample.application.dto.visit.Doctor;
 import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitNotFoundException;
 import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitProjection;
-import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitSpace;
+import io.yasiekz.github.hexagonaldddexample.application.dto.visit.VisitSlot;
 import io.yasiekz.github.hexagonaldddexample.application.query.VisitQuery;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.Patient;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryPatientRepository;
@@ -37,7 +37,7 @@ public class InMemoryVisitQuery implements VisitQuery {
         return VisitProjection.builder()
             .withId(patient.getId())
             .withDate(LocalDate.now())
-            .withVisitSpace(VisitSpace.FIRST)
+            .withVisitSpace(VisitSlot.FIRST)
             .withDoctor(Doctor.builder().withId(UUID.randomUUID()).withName("Lekarz lekarzowy").build())
             .withPatient(io.yasiekz.github.hexagonaldddexample.application.dto.visit.Patient.builder()
                 .withId(UUID.randomUUID())
