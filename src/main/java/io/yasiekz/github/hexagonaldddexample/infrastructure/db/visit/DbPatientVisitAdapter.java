@@ -26,13 +26,14 @@ public class DbPatientVisitAdapter implements PatientPort {
     @Override
     public Patient get(final UUID patientId) {
 
-        final var doctor = patientRepository.get(patientId)
+        final var patient = patientRepository.get(patientId)
             .orElseThrow(
                 () -> new IllegalArgumentException(String.format("Could not fetch patient with ID=%s", patientId)));
 
         return Patient.builder()
             .withId(patientId)
             .withAppointments(getAppointments(patientId))
+            .withPhoneNumber(patient.getPhoneNumber())
             .build();
     }
 

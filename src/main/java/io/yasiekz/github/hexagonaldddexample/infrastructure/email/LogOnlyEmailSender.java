@@ -1,4 +1,4 @@
-package io.yasiekz.github.hexagonaldddexample.infrastructure.db.email;
+package io.yasiekz.github.hexagonaldddexample.infrastructure.email;
 
 import io.yasiekz.github.hexagonaldddexample.domain.email.EmailAddress;
 import io.yasiekz.github.hexagonaldddexample.domain.notification.email.Email;

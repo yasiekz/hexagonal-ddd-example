@@ -4,6 +4,7 @@ import io.yasiekz.github.hexagonaldddexample.domain.aggregate.visit.Visit;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.visit.doctor.Doctor;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.visit.doctor.DoctorAppointment;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.visit.doctor.DoctorPort;
+import io.yasiekz.github.hexagonaldddexample.domain.email.EmailAddress;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryDoctorRepository;
 import io.yasiekz.github.hexagonaldddexample.infrastructure.db.InMemoryVisitRepository;
 import java.util.List;
@@ -29,6 +30,7 @@ public class DbDoctorVisitAdapter implements DoctorPort {
         return Doctor.builder()
             .withId(doctorId)
             .withAppointments(getAppointments(doctorId))
+            .withEmailAddress(doctor.getEmailAddress())
             .build();
     }
 
