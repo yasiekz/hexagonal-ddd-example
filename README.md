@@ -20,36 +20,43 @@ entities here:
 
 - During creation process, the system force client to provide doctor's practise license number. It is needed to check  
   doctor's right to practise his profession in other system, and get his specialization among other parameters
-- Afters successful creation doctor is notified via email
+- After successful creation doctor is notified via email
 
-#### First requirements change
+#### Requirements change
 
-TBD
+- There is huge API license number change
+- After successful creation doctor is notified via push notification 
 
 
 ### Patient requirements
 
+#### Initial requirements
+
 - During creation process, the system force client to provide patient's ID number. It is needed to 
   check patient`s insurance existence and illness history
-- Afters successful creation patient is notified via SMS
+- There are much insurance level's. Patients who's are below MEDIUM level, cannot be added
 
-#### First requirements change
+#### Requirements change
 
-TBD
+- There are different insurance types / for different world regions
 
 ### Visit requirements
 
-- `doctor`, and `patient` entities must be present
+- `Doctor`, and `Patient` entities must be present
 - Both entities have to had free visit slot at the same day
 - Visit with date > 14 days ahead cannot be created
+- `Doctor` is notified via email 
+- `Patient` is notified via SMS
+
+#### Requirements change
 
 ## What is inside
 
 There are many branches in this project:
 
-- `master` - shows the project final version
-- `service-initial` - shows `service` approach with initial requirements
-- `service-first-chage` - shows `service` approach after first requirements change
-- `ddd-initial` - shows `ddd` approach with initial requirements
-- `ddd-first-chage` - shows `ddd` approach after first requirements change
+- `master` - shows the project current version
+- `service-initial` - shows `service` approach with initial requirements (in progress)
+- `service-first-chage` - shows `service` approach after first requirements change (in progress)
+- `ddd-initial` - shows `ddd` approach with initial requirements (for now, same as `master`)
+- `ddd-first-chage` - shows `ddd` approach after first requirements change (in progress)
 
