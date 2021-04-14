@@ -5,6 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareId;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareIdFactory;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareIdType;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.TestHealthCareIdBuilder;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevel;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevelPort;
 import java.util.UUID;
@@ -26,11 +30,19 @@ class PatientFactoryTest {
     @Mock
     private InsuranceLevelPort port;
 
+    @Mock
+    private HealthCareIdFactory healthCareIdFactory;
+
     private PatientFactory patientFactory;
 
     @BeforeEach
     void setUp() {
-        patientFactory = new PatientFactory(port);
+        final HealthCareId healthCareId = TestHealthCareIdBuilder.init()
+            .withType(HealthCareIdType.PL)
+            .withValue(PATIENT_HEALTH_CARE_ID)
+            .build();
+        when(healthCareIdFactory.create(any())).thenReturn(healthCareId);
+        patientFactory = new PatientFactory(port, healthCareIdFactory);
     }
 
     @Test

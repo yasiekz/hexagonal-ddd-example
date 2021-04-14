@@ -1,17 +1,18 @@
-package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.zus;
+package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.healthcareid.zus;
 
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareId;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareIdType;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.illnesshistory.Illness;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.illnesshistory.IllnessHistoryPort;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevel;
-import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevelPort;
+import io.yasiekz.github.hexagonaldddexample.infrastructure.rest.healthcareid.InsuranceLevelConcreteAdapter;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class ZusAdapter implements InsuranceLevelPort, IllnessHistoryPort {
+public class ZusAdapter implements InsuranceLevelConcreteAdapter, IllnessHistoryPort {
 
     private final ZusRepository zusRepository;
 
@@ -27,6 +28,11 @@ public class ZusAdapter implements InsuranceLevelPort, IllnessHistoryPort {
 
         // todo: write some code here
         return List.of();
+    }
+
+    @Override
+    public boolean canHandle(final HealthCareIdType healthCareIdType) {
+        return HealthCareIdType.GLOBAL.equals(healthCareIdType);
     }
 
     private InsuranceLevel map(long lvl) {

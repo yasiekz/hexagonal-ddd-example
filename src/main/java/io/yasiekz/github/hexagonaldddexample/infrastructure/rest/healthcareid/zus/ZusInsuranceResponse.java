@@ -1,4 +1,4 @@
-package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.zus;
+package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.healthcareid.zus;
 
 import java.time.LocalDate;
 import lombok.Builder;

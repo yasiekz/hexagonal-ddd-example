@@ -1,10 +1,12 @@
-package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.zus;
+package io.yasiekz.github.hexagonaldddexample.infrastructure.rest.healthcareid.zus;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareId;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareIdType;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.TestHealthCareIdBuilder;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevel;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +20,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class RestInsuranceLevelAdapterTest {
 
-    private static final HealthCareId healthCareid = HealthCareId.of("PL123123123");
+    private static final HealthCareId healthCareid = TestHealthCareIdBuilder.init().withValue("PL123123123").withType(
+        HealthCareIdType.PL).build();
 
     @Mock
     RestZusRepository repository;

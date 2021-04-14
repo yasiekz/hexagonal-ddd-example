@@ -37,7 +37,8 @@ entities here:
 
 #### Requirements change
 
-- There are different insurance types / for different world regions
+- There are different insurance types / for different world regions. Poland which is not changed, and new type
+`global` which has different insurance lvl rules.
 
 ### Visit requirements
 

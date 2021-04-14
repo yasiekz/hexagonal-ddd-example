@@ -1,6 +1,7 @@
 package io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient;
 
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareId;
+import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.healthcareid.HealthCareIdFactory;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevel;
 import io.yasiekz.github.hexagonaldddexample.domain.aggregate.patient.insurance.InsuranceLevelPort;
 import io.yasiekz.github.hexagonaldddexample.domain.phonenumber.PhoneNumber;
@@ -17,10 +18,11 @@ public final class PatientFactory {
         InsuranceLevel.HIGH, InsuranceLevel.MEDIUM);
 
     private final InsuranceLevelPort insuranceLevelPort;
+    private final HealthCareIdFactory healthCareIdFactory;
 
     public Patient create(final UUID id, final String name, final String healthCareId, final String phoneNumber) {
 
-        final HealthCareId domainHealthCareId = HealthCareId.of(healthCareId);
+        final HealthCareId domainHealthCareId = healthCareIdFactory.create(healthCareId);
         final InsuranceLevel insuranceLevel = insuranceLevelPort.getLvl(domainHealthCareId);
 
         if (!ACCEPTED_INSURANCE_LEVELS.contains(insuranceLevel)) {
