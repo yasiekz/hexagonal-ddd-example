@@ -24,9 +24,8 @@ entities here:
 
 #### Requirements change
 
-- There is huge API license number change
-- After successful creation doctor is notified via push notification 
-
+- There is huge API license number change (in progress)
+- After successful creation doctor is notified via push notification (in progress) 
 
 ### Patient requirements
 
@@ -57,6 +56,6 @@ There are many branches in this project:
 - `master` - shows the project current version
 - `service-initial` - shows `service` approach with initial requirements (in progress)
 - `service-first-chage` - shows `service` approach after first requirements change (in progress)
-- `ddd-initial` - shows `ddd` approach with initial requirements (for now, same as `master`)
+- `ddd-initial` - shows `ddd` approach with initial requirements 
 - `ddd-first-chage` - shows `ddd` approach after first requirements change (in progress)
 
